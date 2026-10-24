@@ -63,6 +63,9 @@ public class Player : MonoBehaviour
         //      Component.
         //
         // Feature 5 of the rubric should work after this.
+        FloatAnimation floaty = other.gameObject.GetComponent<FloatAnimation>();
+        
+        floaty.StopAnimation();
 
 
         // STEP 6 -------------------------------------------------------------
@@ -81,15 +84,15 @@ public class Player : MonoBehaviour
             {
                 case EquationType.Add:
                     // UNCOMMENT AFTER STEP 3
-                    //correct = CheckIfAdditionCorrect(number);
+                    correct = CheckIfAdditionCorrect(number);
                     break;
                 case EquationType.Subtract:
                     // UNCOMMENT AFTER STEP 4
-                    //correct = CheckIfSubtractionCorrect(number);
+                    correct = CheckIfSubtractionCorrect(number);
                     break;
                 case EquationType.Multiply:
                     // UNCOMMENT AFTER STEP 5
-                    //correct = CheckIfMultiplicationCorrect(number);
+                    correct = CheckIfMultiplicationCorrect(number);
                     break;
             }
         }
@@ -138,7 +141,12 @@ public class Player : MonoBehaviour
     // Feature 4 of the rubric should work after you finish all of the 3 methods
     //      in this file.
 
-    // private ??? CheckIfAdditionCorrect (??? ???)
+    private bool CheckIfAdditionCorrect (int addAnswer){
+        if (_number1 + _number2 == addAnswer){
+            return true;
+        }
+        return false;
+    }
 
     // STEP 3 -----------------------------------------------------------------
 
@@ -154,7 +162,12 @@ public class Player : MonoBehaviour
     // After you write this method, uncomment the line above that says
     //      "UNCOMMENT AFTER STEP 4".
 
-    // private ??? CheckIfSubtractionCorrect (??? ???)
+    private bool CheckIfSubtractionCorrect (int subAnswer){
+        if (_number1 - _number2 == subAnswer){
+            return true;
+        }
+        return false;
+    }
 
     // STEP 4 -----------------------------------------------------------------
 
@@ -170,7 +183,12 @@ public class Player : MonoBehaviour
     // After you write this method, uncomment the line above that says
     //      "UNCOMMENT AFTER STEP 5".
 
-    // private ??? CheckIfMultiplicationCorrect (??? ???)
+    private bool CheckIfMultiplicationCorrect (int mulAnswer){
+        if (_number1 * _number2 == mulAnswer){
+            return true;
+        }
+        return false;
+    }
 
     // STEP 5 -----------------------------------------------------------------
 
